@@ -1,7 +1,8 @@
 import React from "react";
+import'./index.css';
 import Expenses from "./components/Expenses/Expenses";
 
-function App() {
+const App = () => {
 
   const expenses = [
     {
@@ -41,7 +42,7 @@ function App() {
   // Use JSX syntax
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <h2 className="title">Let's get started Leaning React!</h2>
       <Expenses items={expenses} />
     </div>
   );
