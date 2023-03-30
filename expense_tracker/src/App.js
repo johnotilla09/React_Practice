@@ -1,3 +1,4 @@
+import React from "react";
 import Expenses from "./components/Expenses";
 
 function App() {
@@ -29,6 +30,15 @@ function App() {
     }
   ];
 
+  // Using React
+  // return React.createElement(
+  //   "div",
+  //   {},
+  //   React.createElement('h2', {}, 'Lets get started'),
+  //   React.createElement(Expenses, {items: expenses})
+  // );
+
+  // Use JSX syntax
   return (
     <div>
       <h2>Let's get started!</h2>
