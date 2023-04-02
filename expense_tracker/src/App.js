@@ -1,6 +1,8 @@
 import React from "react";
+
 import'./index.css';
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
 
@@ -42,7 +44,7 @@ const App = () => {
   // Use JSX syntax
   return (
     <div>
-      <h2 className="title">Let's get started Leaning React!</h2>
+      <NewExpense />
       <Expenses items={expenses} />
     </div>
   );
