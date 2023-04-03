@@ -4,20 +4,40 @@ import "./NewExpense.css";
 import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
-  const [enteredTitle, setTitle] = useState("");
-  const [enteredAmount, setAmount] = useState("");
-  const [enteredDate, setDate] = useState("");
+// Using multiple state
+//   const [enteredTitle, setTitle] = useState("");
+//   const [enteredAmount, setAmount] = useState("");
+//   const [enteredDate, setDate] = useState("");
+
+  // Using One State
+  const [userInput, setUserInput] = useState({
+    enteredTitle: '',
+    enteredAmount: '',
+    enteredDate: ''
+  });
 
   const titleHandlerChange = (event) => {
-    setTitle(event.target.value);
+    // setTitle(event.target.value);
+    setUserInput({
+        ...userInput,
+        enteredTitle: event.target.value
+    });
   };
 
   const amountHandlerChange = (event) => {
-    setAmount(event.target.value);
+    // setAmount(event.target.value);
+    setUserInput({
+        ...userInput,
+        enteredAmount: event.target.value
+    });
   };
 
   const dateHandlerChange = (event) => {
-    setDate(event.target.value);
+    // setDate(event.target.value);
+    setUserInput({
+        ...userInput,
+        enteredDate: event.target.value
+    });
   };
 
   return (
