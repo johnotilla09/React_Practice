@@ -18,25 +18,46 @@ const ExpenseForm = () => {
 
   const titleHandlerChange = (event) => {
     // setTitle(event.target.value);
-    setUserInput({
-        ...userInput,
-        enteredTitle: event.target.value
+
+    // This could depend on a outdated or incorrect state snopshot
+    // setUserInput({
+    //     ...userInput,
+    //     enteredTitle: event.target.value
+    // });
+
+    // This could give you the latest snapshot of state
+    setUserInput((prevState) => {
+        return { ...userInput, enteredTitle: event.target.value };
     });
   };
 
   const amountHandlerChange = (event) => {
     // setAmount(event.target.value);
-    setUserInput({
-        ...userInput,
-        enteredAmount: event.target.value
-    });
+
+    // This could depend on a outdated or incorrect state snopshot
+    // setUserInput({
+    //     ...userInput,
+    //     enteredAmount: event.target.value
+    // });
+
+    // This could give you the latest snapshot of state
+    setUserInput((prevState) => {
+        return { ...userInput, enteredAmount: event.target.value };
+    })
   };
 
   const dateHandlerChange = (event) => {
     // setDate(event.target.value);
-    setUserInput({
-        ...userInput,
-        enteredDate: event.target.value
+
+    // This could depend on a outdated or incorrect state snopshot
+    // setUserInput({
+    //     ...userInput,
+    //     enteredDate: event.target.value
+    // });
+
+    // This could give you the latest snapshot of state
+    setUserInput((prevState) => {
+        return { ...userInput, enteredDate: event.target.value};
     });
   };
 
