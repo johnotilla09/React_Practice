@@ -5,19 +5,19 @@ import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
 // Using multiple state
-//   const [enteredTitle, setTitle] = useState("");
-//   const [enteredAmount, setAmount] = useState("");
-//   const [enteredDate, setDate] = useState("");
+  const [enteredTitle, setTitle] = useState("");
+  const [enteredAmount, setAmount] = useState("");
+  const [enteredDate, setDate] = useState("");
 
   // Using One State
-  const [userInput, setUserInput] = useState({
-    enteredTitle: '',
-    enteredAmount: '',
-    enteredDate: ''
-  });
+//   const [userInput, setUserInput] = useState({
+//     enteredTitle: '',
+//     enteredAmount: '',
+//     enteredDate: ''
+//   });
 
   const titleHandlerChange = (event) => {
-    // setTitle(event.target.value);
+    setTitle(event.target.value);
 
     // This could depend on a outdated or incorrect state snopshot
     // setUserInput({
@@ -26,13 +26,13 @@ const ExpenseForm = () => {
     // });
 
     // This could give you the latest snapshot of state
-    setUserInput((prevState) => {
-        return { ...userInput, enteredTitle: event.target.value };
-    });
+    // setUserInput((prevState) => {
+    //     return { ...userInput, enteredTitle: event.target.value };
+    // });
   };
 
   const amountHandlerChange = (event) => {
-    // setAmount(event.target.value);
+    setAmount(event.target.value);
 
     // This could depend on a outdated or incorrect state snopshot
     // setUserInput({
@@ -41,13 +41,13 @@ const ExpenseForm = () => {
     // });
 
     // This could give you the latest snapshot of state
-    setUserInput((prevState) => {
-        return { ...userInput, enteredAmount: event.target.value };
-    })
+    // setUserInput((prevState) => {
+    //     return { ...userInput, enteredAmount: event.target.value };
+    // })
   };
 
   const dateHandlerChange = (event) => {
-    // setDate(event.target.value);
+    setDate(event.target.value);
 
     // This could depend on a outdated or incorrect state snopshot
     // setUserInput({
@@ -56,13 +56,25 @@ const ExpenseForm = () => {
     // });
 
     // This could give you the latest snapshot of state
-    setUserInput((prevState) => {
-        return { ...userInput, enteredDate: event.target.value};
-    });
+    // setUserInput((prevState) => {
+    //     return { ...userInput, enteredDate: event.target.value};
+    // });
   };
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const expenseData = {
+        title: enteredTitle,
+        amount: enteredAmount,
+        date: enteredDate
+    };
+
+    console.log(expenseData);
+  }
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
