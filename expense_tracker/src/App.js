@@ -4,7 +4,7 @@ import'./index.css';
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
-const App = () => {
+const App = (props) => {
 
   const expenses = [
     {
@@ -33,6 +33,10 @@ const App = () => {
     }
   ];
 
+  const addExpenseHnadler = (expense) => {
+    console.log(expense);
+  };
+
   // Using React
   // return React.createElement(
   //   "div",
@@ -44,7 +48,7 @@ const App = () => {
   // Use JSX syntax
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHnadler} />
       <Expenses items={expenses} />
     </div>
   );
