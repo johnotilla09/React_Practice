@@ -16,7 +16,7 @@ const ExpenseForm = (props) => {
   //     enteredDate: ''
   //   });
 
-  const titleHandlerChange = (event) => {
+  const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
 
     // This could depend on a outdated or incorrect state snopshot
@@ -31,7 +31,7 @@ const ExpenseForm = (props) => {
     // });
   };
 
-  const amountHandlerChange = (event) => {
+  const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
 
     // This could depend on a outdated or incorrect state snopshot
@@ -46,7 +46,7 @@ const ExpenseForm = (props) => {
     // })
   };
 
-  const dateHandlerChange = (event) => {
+  const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
 
     // This could depend on a outdated or incorrect state snopshot
@@ -84,7 +84,7 @@ const ExpenseForm = (props) => {
           <input
             type="text"
             value={enteredTitle}
-            onChange={titleHandlerChange}
+            onChange={titleChangeHandler}
           />
         </div>
         <div className="new-expense__control">
@@ -94,7 +94,7 @@ const ExpenseForm = (props) => {
             min="0.01"
             step="0.01"
             value={enteredAmount}
-            onChange={amountHandlerChange}
+            onChange={amountChangeHandler}
           />
         </div>
         <div className="new-expense__control">
@@ -104,7 +104,7 @@ const ExpenseForm = (props) => {
             min="2019-01-01"
             max="2022-12-31"
             value={enteredDate}
-            onChange={dateHandlerChange}
+            onChange={dateChangeHandler}
           />
         </div>
       </div>
