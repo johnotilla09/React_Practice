@@ -15,7 +15,7 @@ const DUMMY_EXPENSES = [
     id : 'e2',
     title : 'Water',
     amount : '500.00',
-    date : new Date()
+    date : new Date('2023-02-23')
   },
   {
     id : 'e3',
@@ -27,7 +27,7 @@ const DUMMY_EXPENSES = [
     id : 'e4',
     title : 'Transportation',
     amount : '150.000',
-    date : new Date()
+    date : new Date('2023-01-01')
   }
 ];
 
