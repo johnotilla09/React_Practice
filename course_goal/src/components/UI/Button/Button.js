@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 import styles from './Button.module.css';
 
 // Other way in styling an htm element

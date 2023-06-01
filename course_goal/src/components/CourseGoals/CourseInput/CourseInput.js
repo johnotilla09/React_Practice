@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 
 import Button from '../../UI/Button/Button';
 import styles from './CourseInput.module.css';
@@ -60,6 +59,7 @@ const CourseInput = props => {
       return;
     }
     props.onAddGoal(enteredValue);
+    setEnteredValue('');
   };
 
   return (
@@ -68,6 +68,7 @@ const CourseInput = props => {
         <label>Course Goal</label>
         <input
           type="text"
+          value={enteredValue}
           onChange={goalInputChangeHandler}
         />
       </div>
