@@ -14,6 +14,15 @@ const AddUser = () => {
 
     const addUserHandler = (event) => {
         event.preventDefault();
+
+        if (enteredFirstname.trim().length === 0 || enteredLastname.trim().length === 0 || enteredAddress.trim().length === 0 || enteredAge.trim().length === 0) {
+            return;
+        }
+
+        if (enteredAge < 1) {
+            return;
+        }
+
         console.log("Hello I am " + enteredFirstname + " " + enteredLastname + " I live in " + enteredAddress + " and I am " + enteredAge + " years old now");
 
         setEnteredFirstname('');
@@ -58,7 +67,7 @@ const AddUser = () => {
                 </div>
                 <div className={`${styles['age']}`}>
                     <div className={`${styles['form-group']} ${styles['user-age']}`}>
-                        <input type="number" value={enteredAge} onChange={ageChangeHandler} />
+                        <input type="text" value={enteredAge} onChange={ageChangeHandler} />
                     </div>
                 </div>
                 <Button type="submit">Add User</Button>
