@@ -14,7 +14,6 @@ form {
 
 .form-group {
     width: 100%;
-    border: 2px solid #ccc;
     border-radius: 10px;
     position: relative;
 }
@@ -27,20 +26,8 @@ form {
     font-size: 20px;
     text-indent: 10px;
     border: none;
-    outline: none;
     border-radius: 10px;
-}
-
-.form-group::before {
-    content: "";
-    font-size: 16px;
-    font-weight: 500;
-    position: absolute;
-    color: #1c1c1c;
-    background: #fff;
-    top: -10px;
-    left: 10px;
-    padding: 0 5px;
+    border: 2px solid #ccc;
 }
 
 .names {
@@ -48,18 +35,11 @@ form {
     gap: 15px;
 }
 
-.names .firstname::before {
-    content: "First name";
-}
-
-.names .lastname::before {
-    content: "Last name";
-}
-
-.address .home-address::before {
-    content: "Address";
-}
-
-.age .user-age::before {
-    content: "Age";
+.form-group label{
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    color: #1c1c1c;
+    background: #fff;
+    padding: 0 5px;
 }
