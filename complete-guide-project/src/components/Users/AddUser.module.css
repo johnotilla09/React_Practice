@@ -1,0 +1,65 @@
+h2 {
+    font-weight: 600;
+    margin: 0;
+    padding: 15px 0;
+    border-bottom: 2px solid #ccc;
+  }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding:30px 0 15px 0;
+}
+
+.form-group {
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    position: relative;
+}
+
+.form-group input {
+    height: 50px;
+    width: 100%;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 20px;
+    text-indent: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.form-group::before {
+    content: "";
+    font-size: 16px;
+    font-weight: 500;
+    position: absolute;
+    color: #1c1c1c;
+    background: #fff;
+    top: -10px;
+    left: 10px;
+    padding: 0 5px;
+}
+
+.names {
+    display: flex;
+    gap: 15px;
+}
+
+.names .firstname::before {
+    content: "First name";
+}
+
+.names .lastname::before {
+    content: "Last name";
+}
+
+.address .home-address::before {
+    content: "Address";
+}
+
+.age .user-age::before {
+    content: "Age";
+}
