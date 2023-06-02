@@ -20,7 +20,7 @@ const UsersList = (props) => {
                 </thead>
                 <tbody>
                     {props.users.map((user) => (
-                        <tr key={user.id} className={`${styles['table-row']}`}>
+                        <tr key={user.id}>
                             <td>{user.firstname}</td>
                             <td>{user.lastname}</td>
                             <td>{user.age}</td>
