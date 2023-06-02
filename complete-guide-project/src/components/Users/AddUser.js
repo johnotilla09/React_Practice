@@ -6,7 +6,7 @@ import Button from "../UI/Button/Button";
 
 import styles from './AddUser.module.css';
 
-const AddUser = () => {
+const AddUser = (props) => {
     const [enteredFirstname, setEnteredFirstname] = useState('');
     const [enteredLastname, setEnteredLastname] = useState('');
     const [enteredAddress, setEnteredAddress] = useState('');
@@ -23,7 +23,7 @@ const AddUser = () => {
             return;
         }
 
-        console.log("Hello I am " + enteredFirstname + " " + enteredLastname + " I live in " + enteredAddress + " and I am " + enteredAge + " years old now");
+        props.onAddUser(enteredFirstname, enteredLastname,enteredAddress,enteredAge);
 
         setEnteredFirstname('');
         setEnteredLastname('');

@@ -1,0 +1,22 @@
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  tbody {
+    text-align: center;
+  }
+
+  tbody tr:nth-child(odd) {
+    background: #E8E9ED;
+  }
+
+  th {
+    color: #A3ABBF;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  th, td {
+    padding: 10px;
+  }

@@ -6,14 +6,29 @@ import styles from './UsersList.module.css';
 
 const UsersList = (props) => {
     return (
-        <Card className={styles.users}>
-            <ul>
-            {props.users.map((user) => (
-                <li>
-                    Hello I am {user.firstname} {user.lastname}. I am {user.age} and I live in {user.address}. 
-                </li>
-            ))}
-        </ul>
+        <Card>
+
+            <h2>Users</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {props.users.map((user) => (
+                        <tr key={user.id} className={`${styles['table-row']}`}>
+                            <td>{user.firstname}</td>
+                            <td>{user.lastname}</td>
+                            <td>{user.age}</td>
+                            <td>{user.address}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </Card>
     );
 };
