@@ -4,6 +4,7 @@ import { useState } from "react";
 import Card from "../UI/Card/Card";
 import Button from "../UI/Button/Button";
 import ErrorModal from "../UI/ErrorModal/ErrorModal";
+import Wrapper from "../Wrapper/Wrapper";
 
 import styles from './AddUser.module.css';
 
@@ -62,7 +63,7 @@ const AddUser = (props) => {
     }
     
     return (
-      <div>
+      <Wrapper>
         {error && (
           <ErrorModal
             title={error.title}
@@ -84,7 +85,7 @@ const AddUser = (props) => {
                 />
               </div>
               <div className={`${styles["form-group"]}`}>
-              <label htmlFor="lastname">Last Name</label>
+                <label htmlFor="lastname">Last Name</label>
                 <input
                   id="lastname"
                   type="text"
@@ -108,7 +109,7 @@ const AddUser = (props) => {
             </div>
             <div className={`${styles["age"]}`}>
               <div className={`${styles["form-group"]}`}>
-              <label htmlFor="age">Age</label>
+                <label htmlFor="age">Age</label>
                 <input
                   id="age"
                   type="text"
@@ -120,7 +121,7 @@ const AddUser = (props) => {
             <Button type="submit">Add User</Button>
           </form>
         </Card>
-      </div>
+      </Wrapper>
     );
 };
 
