@@ -18,7 +18,7 @@ const ExpenseForm = (props) => {
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
-
+    // console.log(enteredTitle);
     // This could depend on a outdated or incorrect state snopshot
     // setUserInput({
     //     ...userInput,
