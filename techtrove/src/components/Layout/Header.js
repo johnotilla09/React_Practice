@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 
 import Image from "./Image";
+import HeaderCartButton from "./HeaderCartButton";
 
 import styles from './Header.module.css';
 
@@ -9,9 +10,9 @@ import backgroundImaga from '../../Assets/background.jpg';
 const Header = (props) => {
     return (
       <Fragment>
-        <header className={styles.header}>
+        <header className={styles.header }>
             <h1>TechTrove</h1>
-            <button>Cart</button>
+            <HeaderCartButton />
         </header>
         <Image>
           <img
