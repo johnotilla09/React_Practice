@@ -5,12 +5,12 @@ import CartContext from "./cart-context";
 // Manage the current context to data and provide that context to all components that want access to it. 
 const CartProvider = (props) => {
 
-    addItemCartHandler = item => {};
+    const addItemCartHandler = items => {};
 
-    removeItemCartHandler = id => {};
+    const removeItemCartHandler = id => {};
 
     const cartContext = {
-        item: [],
+        items: [],
         totalAmount: 0,
         addItem: addItemCartHandler,
         removeItem: removeItemCartHandler
