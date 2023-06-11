@@ -10,6 +10,7 @@ const ProductsItem = (props) => {
     const cartCtx = useContext(CartContext);
 
     const addToCartHandler = amount => {
+
       cartCtx.addItem({
         id: props.product.id,
         name: props.product.name,
