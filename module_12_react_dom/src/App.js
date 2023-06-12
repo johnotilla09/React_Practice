@@ -6,22 +6,25 @@ import Demo from './components/Demo/Demo';
 
 function App() {
   const [showParagraph, setShowParagraph] = useState(false);
+  const [allowToggling, setAllowToggling] = useState(false);
 
   console.log('App Running');
 
   const showParagraphHandler = useCallback(() => {
-    setShowParagraph(prevShowParagraph => !prevShowParagraph)
-  }, []);
+    if (allowToggling) {
+      setShowParagraph(prevShowParagraph => !prevShowParagraph);
+    }
+  }, [allowToggling]);
 
-  const vars = {
-    name: 'John C. Otilla',
-    address: 'Inascan, Guinobatan, Albay'
+  const allowToggleHandler = () => {
+    setAllowToggling(true);
   };
 
   return (
     <div className="App">
       <h1>Hi There!!!</h1>
-      <Demo show={false} / >
+      <Demo show={showParagraph} / >
+      <Button onClick={allowToggleHandler}>Allow Toggling</Button>
       <Button onClick={showParagraphHandler}>{showParagraph ? 'Hide' : 'Show'} Paragraph</Button>
     </div>
   );
