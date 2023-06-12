@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import './App.css';
 import Button from './components/UI/Button/Button';
+import Demo from './components/Demo/Demo';
 
 function App() {
   const [showParagraph, setShowParagraph] = useState(false);
@@ -12,10 +13,15 @@ function App() {
     setShowParagraph(prevShowParagraph => !prevShowParagraph)
   };
 
+  const vars = {
+    name: 'John C. Otilla',
+    address: 'Inascan, Guinobatan, Albay'
+  };
+
   return (
     <div className="App">
       <h1>Hi There!!!</h1>
-      {showParagraph && <p>Hello I Am John C. otilla</p>}
+      <Demo show={showParagraph} / >
       <Button onClick={showParagraphHandler}>{showParagraph ? 'Hide' : 'Show'} Paragraph</Button>
     </div>
   );
