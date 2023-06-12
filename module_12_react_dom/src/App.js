@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <h1>Hi There!!!</h1>
-      <Demo show={showParagraph} / >
+      <Demo show={false} / >
       <Button onClick={showParagraphHandler}>{showParagraph ? 'Hide' : 'Show'} Paragraph</Button>
     </div>
   );
