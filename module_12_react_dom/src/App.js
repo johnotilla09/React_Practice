@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 import './App.css';
 import Button from './components/UI/Button/Button';
@@ -9,9 +9,9 @@ function App() {
 
   console.log('App Running');
 
-  const showParagraphHandler = () => {
+  const showParagraphHandler = useCallback(() => {
     setShowParagraph(prevShowParagraph => !prevShowParagraph)
-  };
+  }, []);
 
   const vars = {
     name: 'John C. Otilla',
