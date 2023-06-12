@@ -17,7 +17,7 @@ function App() {
   }, [allowToggling]);
 
   const allowToggleHandler = () => {
-    setAllowToggling(true);
+    setAllowToggling(prevAllowToggle => !prevAllowToggle);
   };
 
   return (
