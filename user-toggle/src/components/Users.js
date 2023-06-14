@@ -15,6 +15,12 @@ class Users extends Component {
     };
   }
 
+  componentDidUpdate () {
+    if (this.props.users.length === 0) {
+      throw new Error('No users Found');
+    }
+  }
+
   // Method in class in javascript
   toggleUsersHandler () {
     this.setState((curState) => {

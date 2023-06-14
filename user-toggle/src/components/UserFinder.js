@@ -4,6 +4,7 @@ import React, { Fragment } from "react";
 import styles from './UserFinder.module.css';
 import Users from "./Users";
 import UserContext from "./store/user-context";
+import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
 
 // Class-based Component
 class UserFinder extends Component {
@@ -40,12 +41,17 @@ class UserFinder extends Component {
 
     render () {
         return (
-            <Fragment>
-                <div className={styles.finder}>
-                    <input type="search" onChange={this.searchUserHandler.bind(this)} />
-                </div>
-                <Users users={this.state.filteredUsers} />
-            </Fragment>
+          <Fragment>
+            <div className={styles.finder}>
+              <input
+                type="search"
+                onChange={this.searchUserHandler.bind(this)}
+              />
+            </div>
+            <ErrorBoundary>
+              <Users users={this.state.filteredUsers} />
+            </ErrorBoundary>
+          </Fragment>
         );
     }
 }

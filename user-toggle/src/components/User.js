@@ -4,6 +4,8 @@ import classes from './User.module.css';
 
 // Class Based Components
 class User extends Component {
+
+  // use of componentWillUnmount
   componentWillUnmount () {
     console.log("Component will Unamount!!!");
   }
