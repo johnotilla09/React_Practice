@@ -19,6 +19,9 @@ function AddMovie(props) {
     };
 
     props.onAddMovie(movie);
+    titleRef('');
+    openingTextRef('');
+    releaseDateRef('');
   }
 
   return (
