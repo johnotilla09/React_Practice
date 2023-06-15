@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import MoviesList from './components/MoviesList';
 import './App.css';
 
+// The API used here is the REST API
 function App() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -13,9 +14,8 @@ function App() {
     setError(null);
 
     try { 
-      // Request to the API
+      // Getting request to the API
       const response = await fetch('https://swapi.dev/api/films/');
-      console.log("Load again this page!");
 
       // Catching an error
       if (!response.ok) {
@@ -44,7 +44,8 @@ function App() {
 
   useEffect(() => {
     fetchMovieHandler();
-  }, []);
+    console.log("Load again this page!");
+  }, [fetchMovieHandler]);
 
   // The other way of requesting and getting a response to the request
   // HTTP request
