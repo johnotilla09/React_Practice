@@ -3,9 +3,9 @@ import React, { useRef } from 'react';
 import classes from './AddMovie.module.css';
 
 function AddMovie(props) {
-  const titleRef = useRef('');
-  const openingTextRef = useRef('');
-  const releaseDateRef = useRef('');
+  const titleRef = useRef();
+  const openingTextRef = useRef();
+  const releaseDateRef = useRef();
 
   function submitHandler(event) {
     event.preventDefault();
@@ -19,9 +19,9 @@ function AddMovie(props) {
     };
 
     props.onAddMovie(movie);
-    titleRef('');
-    openingTextRef('');
-    releaseDateRef('');
+    titleRef.current.value = '';
+    openingTextRef.current.value = '';
+    releaseDateRef.current.value = '';
   }
 
   return (

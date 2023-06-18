@@ -63,9 +63,11 @@ function App() {
 
   let content = <p>Found no movies.</p>;
 
-  if (movies.length > 0) {
-    content = <MoviesList movies={movies} />;
-  }
+  useEffect(() => {
+    if (movies.length > 0) {
+      content = <MoviesList movies={movies} />;
+    }
+  }, [movies]);
 
   if (error) {
     content = <p>{error}</p>;
