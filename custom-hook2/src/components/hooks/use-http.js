@@ -4,14 +4,14 @@ const useHttp = (requestConfig, applyData) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchTasks = async (taskText) => {
+  const sendRequest = async (taskText) => {
     setIsLoading(true);
     setError(null);
     try {
       const response = await fetch(requestConfig.url, {
-        method: requestConfig.method,
-        body: JSON.stringify(requestConfig),
-        header: requestConfig.headers,
+        method: requestConfig.method ? requestConfig.method : 'GET',
+        body: requestConfig.body? JSON.stringify(requestConfig.body) : null,
+        header: requestConfig.headers ? requestConfig.headers : {},
       });
 
       if (!response.ok) {
