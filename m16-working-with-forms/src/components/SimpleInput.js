@@ -6,11 +6,22 @@ const SimpleInput = (props) => {
   const [ enteredNameIsValid, setEnteredNameIsValid ] = useState(false);
   const [ enteredNameTouched, setEnteredNameTouched ] = useState(false);
 
+  const nameInputBlurHandler = (event) => {
+    setEnteredNameTouched(true);
+
+    if (enteredName.trim() === '') {
+      setEnteredNameIsValid(false);
+      return;
+    }
+
+  };
+
   // This is the way in getting the user input in useState
   const nameInputChangeHandler = (event) => {
     setEnteredName(event.target.value);
   };
 
+  // this wll run submit button is click
   const submitFormHandler = (event) => {
     event.preventDefault();
 
@@ -51,6 +62,7 @@ const SimpleInput = (props) => {
           type="text"
           id="name"
           onChange={nameInputChangeHandler}
+          onBlur={nameInputBlurHandler}
           ref={nameInputRef}
           value={enteredName}
         />
