@@ -1,24 +1,20 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 const SimpleInput = (props) => {
-  const nameInputRef = useRef();
   const [ enteredName, setEnteredName ] = useState('');
-  const [ enteredNameIsValid, setEnteredNameIsValid ] = useState(false);
   const [ enteredNameTouched, setEnteredNameTouched ] = useState(false);
 
-  const nameInputBlurHandler = (event) => {
-    setEnteredNameTouched(true);
-
-    if (enteredName.trim() === '') {
-      setEnteredNameIsValid(false);
-      return;
-    }
-
-  };
+  const enteredNameIsValid = enteredName.trim() !== '';
+  const nameInputIsValid = !enteredNameIsValid && enteredNameTouched;
 
   // This is the way in getting the user input in useState
   const nameInputChangeHandler = (event) => {
     setEnteredName(event.target.value);
+  };
+
+  // This will run whn a user doesn't input any in the ui but click the input element 
+  const nameInputBlurHandler = (event) => {
+    setEnteredNameTouched(true);
   };
 
   // this wll run submit button is click
@@ -28,27 +24,17 @@ const SimpleInput = (props) => {
     //  This will assign true if user submitted with/without anything inputed.
     setEnteredNameTouched(true);
 
-    if (enteredName.trim() === '') {
-      setEnteredNameIsValid(false);
+    if (!enteredNameIsValid) {
       return;
     }
-
-    // This indicate that the input is valid
-    setEnteredNameIsValid(true);
 
     // This is for the use state
     console.log(enteredName);
 
-    // We assign the value from useRef state
-    const enteredNameRef = nameInputRef.current.value;
-
-    console.log(enteredNameRef);
-
     // This is a two way binding
     setEnteredName('');
+    setEnteredNameTouched(false);
   };
-
-  const nameInputIsValid = !enteredNameIsValid && enteredNameTouched;
 
   const nameInputClasses = nameInputIsValid
     ? "form-control invalid"
@@ -63,7 +49,6 @@ const SimpleInput = (props) => {
           id="name"
           onChange={nameInputChangeHandler}
           onBlur={nameInputBlurHandler}
-          ref={nameInputRef}
           value={enteredName}
         />
         {nameInputIsValid && (
