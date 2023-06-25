@@ -97,6 +97,11 @@ button:disabled:active {
   margin-left: 1rem;
 }
 
+/* I add an style to label when user input is invalid */
+.invalid label {
+  color: #fddddd;
+}
+
 .invalid input {
   border: 1px solid #b40e0e;
   background-color: #fddddd;

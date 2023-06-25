@@ -29,7 +29,7 @@ const SimpleInput = (props) => {
   const submitFormHandler = (event) => {
     event.preventDefault();
 
-    if (!enteredNameIsValid && !enteredEmailIsValid) {
+    if (!formIsValid) {
       return;
     }
 
@@ -90,7 +90,6 @@ const SimpleInput = (props) => {
 };
 
 export default SimpleInput;
-
 
 
 
