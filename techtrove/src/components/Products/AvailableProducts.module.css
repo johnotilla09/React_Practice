@@ -10,6 +10,11 @@
     margin: 0;
     padding: 0;
   }
+
+.productLoading {
+  text-align: center;
+  color: black;
+}
   
 @keyframes products-appear {
     from {

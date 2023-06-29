@@ -7,6 +7,7 @@ import styles from './AvailableProducts.module.css';
 
 const AvailableProducts = (props) => {
   const [ products, setProducts ] = useState([]);
+  const [ isLoading, setIsLoading ] = useState(true);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -24,26 +25,32 @@ const AvailableProducts = (props) => {
         })
       }
 
-      setProducts(loadProducts)
+      setProducts(loadProducts);
+      setIsLoading(false);
     };
 
     fetchProducts();
   }, []);
 
-    const productsList = products.map((product) => (
-      <ProductsItem
-        key={product.id}
-        product={product}
-      />
-    ));
-
+  if (isLoading) {
     return (
-      <div className={styles.products}>
-        <Card>
-          <ul>{productsList}</ul>
-        </Card>
-      </div>
-    );
+      <section className={styles.productLoading}>
+        <p>Loading...</p>
+      </section>
+    )
+  }
+
+  const productsList = products.map((product) => (
+    <ProductsItem key={product.id} product={product} />
+  ));
+
+  return (
+    <div className={styles.products}>
+      <Card>
+        <ul>{productsList}</ul>
+      </Card>
+    </div>
+  );
 };
 
 export default AvailableProducts;
