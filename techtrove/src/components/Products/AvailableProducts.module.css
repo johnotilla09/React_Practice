@@ -15,6 +15,11 @@
   text-align: center;
   color: black;
 }
+
+.productError {
+  text-align: center;
+  color: #ff0000;
+}
   
 @keyframes products-appear {
     from {

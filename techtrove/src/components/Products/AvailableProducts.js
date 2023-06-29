@@ -8,10 +8,16 @@ import styles from './AvailableProducts.module.css';
 const AvailableProducts = (props) => {
   const [ products, setProducts ] = useState([]);
   const [ isLoading, setIsLoading ] = useState(true);
+  const [ httpError, setHttpError ] = useState();
 
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch('https://react-html-db32f-default-rtdb.asia-southeast1.firebasedatabase.app/meals.json').then();
+
+      if (!response.ok) {
+        throw new Error('Something went wrong!');
+      }
+
       const responseData = await response.json();
 
       const loadProducts = [];
@@ -29,7 +35,10 @@ const AvailableProducts = (props) => {
       setIsLoading(false);
     };
 
-    fetchProducts();
+    fetchProducts().catch((error) => {
+      setIsLoading(false);
+      setHttpError(error.message);
+    });
   }, []);
 
   if (isLoading) {
@@ -38,6 +47,14 @@ const AvailableProducts = (props) => {
         <p>Loading...</p>
       </section>
     )
+  }
+
+  if (httpError) {
+    return (
+      <section className={styles.productError}>
+        <p>{ httpError }</p>
+      </section>
+    );
   }
 
   const productsList = products.map((product) => (
