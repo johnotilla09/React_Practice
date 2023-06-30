@@ -1,38 +1,48 @@
-import React from "react";
+import { useRef } from 'react';
 
-import styles from './CheckOut.module.css';
+import classes from './CheckOut.module.css';
 
-const CheckOut = (props) => {
-    const confirmHandler = (event) => {
-        event.preventDefault();
-    };
+const Checkout = (props) => {
+  const nameInputRef = useRef();
+  const zipCodeInputRed = useRef();
+  const municipalityInputref = useRef();
+  const addressInputRef = useRef();
 
-    return (
-        <form onSubmit={confirmHandler}>
-            <div className={StyleSheet.control}>
-                <label htmlFor="name">Your Name</label>
-                <input type="text" id="name" />
-            </div>
-            <div className={StyleSheet.control}>
-                <label htmlFor="name">Postal Code</label>
-                <input type="text" id="name" />
-            </div>
-            <div className={StyleSheet.control}>
-                <label htmlFor="name">Muicipality</label>
-                <input type="text" id="name" />
-            </div>
-            <div className={StyleSheet.control}>
-                <label htmlFor="name">Address</label>
-                <input type="text" id="name" />
-            </div>
-            <div className={StyleSheet.control}>
-                <label htmlFor="name">Zone</label>
-                <input type="text" id="name" />
-            </div>
-            <button type="button" onClick={props.onCancel}>Cancel</button>
-            <button>Confrm</button>
-        </form>
-    )
+  const confirmHandler = (event) => {
+    event.preventDefault();
+
+    const enteredName = nameInputRef.current.value;
+    const enteredZipCode = zipCodeInputRed.current.value;
+    const enteredMunicipality = municipalityInputref.current.value;
+    const enteredAddress = addressInputRef.current.value;
+  };
+
+  return (
+    <form className={classes.form} onSubmit={confirmHandler}>
+      <div className={classes.control}>
+        <label htmlFor='name'>Your Name</label>
+        <input type='text' id='name' ref={nameInputRef} />
+      </div>
+      <div className={classes.control}>
+        <label htmlFor='zip-code'>Zip Code</label>
+        <input type='text' id='zip-code' ref={zipCodeInputRed} />
+      </div>
+      <div className={classes.control}>
+        <label htmlFor='municipality'>Municipality</label>
+        <input type='text' id='municipality' ref={municipalityInputref} />
+      </div>
+      <div className={classes.control}>
+        <label htmlFor='address'>Address</label>
+        <input type='text' id='address' />
+      </div>
+      <div className={classes.actions}>
+        <button type='button' onClick={props.onCancel}>
+          Cancel
+        </button>
+        <button className={classes.submit}>Confirm</button>
+      </div>
+    </form>
+  );
 };
 
-export default CheckOut;
+export default Checkout;
