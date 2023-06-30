@@ -48,7 +48,17 @@ const Checkout = (props) => {
         return;
       }
 
-    console.log(formInputsValidity.name);
+    props.onConfirm({
+        name: enteredName,
+        zipCode: enteredZipCode,
+        municipality: enteredMunicipality,
+        address: enteredAddress
+    })
+
+    nameInputRef.current.value = '';
+    zipCodeInputRed.current.value = '';
+    municipalityInputref.current.value = '';
+    addressInputRef.current.value = '';
 
   };
 
