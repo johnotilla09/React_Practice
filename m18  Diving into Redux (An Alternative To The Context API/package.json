@@ -2,7 +2,7 @@
   "name": "m18-diving-into-redux-(an-alternative-to-the-context-api",
   "version": "1.0.0",
   "description": "",
-  "main": "redux.demo.js",
+  "main": "redux-demo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
