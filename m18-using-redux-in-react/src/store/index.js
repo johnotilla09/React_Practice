@@ -1,4 +1,4 @@
-// This is in react
+// import redux in react
 import { legacy_createStore } from "redux";
 
 // reducer function
@@ -18,6 +18,7 @@ const counterReducer = (state = { counter: 0 }, action) => {
     return state;
 }
 
+// creating a store
 const store = legacy_createStore(counterReducer);
 
 export default store;
