@@ -137,7 +137,7 @@ const Login = (props) => {
           onChange={passwordChangeHandler}
           onBlur={validatePasswordHandler}
         />
-        {/* <div
+        <div
           className={`${classes.control} ${
             passwordState.isValid === false ? classes.invalid : ""
           }`}
@@ -150,7 +150,7 @@ const Login = (props) => {
             onChange={passwordChangeHandler}
             onBlur={validatePasswordHandler}
           />
-        </div> */}
+        </div>
         <div className={classes.actions}>
           <Button type="submit" className={classes.btn} >
             Login

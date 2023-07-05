@@ -17,7 +17,7 @@ const SimpleInput = (props) => {
     valueChangeHandler: emailChangeHandler,
     inputBlurHandler: emailBlurHandler,
     reset: resetEmailInput,
-  } = useInput((value) => value.includes("@"));
+  } = useInput((value) => value.includes('@'));
 
   let formIsValid = false;
 
@@ -49,8 +49,6 @@ const SimpleInput = (props) => {
   const emailInputClass = emailInputHasError
     ? "form-control invalid"
     : "form-control";
-
-  console.log(formIsValid + "form is valid");
 
   return (
     <form onSubmit={submitFormHandler}>
