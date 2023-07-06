@@ -6,7 +6,7 @@ import { Component } from 'react';
 // connect function a wrapper around class compoenent to connect the class component to the stoore
 // dispatch hook
 import { useSelector, useDispatch } from 'react-redux';
-import { counterActions } from '../store';
+import { counterActions } from '../store/counter-slice';
 
 import classes from './Counter.module.css';
 
@@ -30,7 +30,7 @@ const Counter = () => {
   // increment handler to dispatch an action
   // counter increase by 5 Handler
   const increaseHandler = () => {
-    dispatch(counterActions.increase(5)); // Create { type: SOME UNIQUE IDENTIFIER, payload: 5 }
+    dispatch(counterActions.increase(5)); // Create { type: SOME UNIQUE IDENTIFIER, payload: }
   };
 
   // decrement handler to dispatch an action
