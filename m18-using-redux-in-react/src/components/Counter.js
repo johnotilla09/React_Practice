@@ -5,7 +5,8 @@ import { Component } from 'react';
 // useSelector hook - automatically select a part state manage by the store
 // connect function a wrapper around class compoenent to connect the class component to the stoore
 // dispatch hook
-import { useSelector, useDispatch, connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { counterActions } from '../store';
 
 import classes from './Counter.module.css';
 
@@ -23,23 +24,23 @@ const Counter = () => {
   // increment handler to dispatch an action
   // counter increases by 1
   const incrementHandler = () => {
-    dispatch({ type: 'increment' });
+    dispatch(counterActions.increment());
   };
 
   // increment handler to dispatch an action
   // counter increase by 5 Handler
   const increaseHandler = () => {
-    dispatch({ type: 'increase', amount: 5 });
+    dispatch(counterActions.increase(5)); // Create { type: SOME UNIQUE IDENTIFIER, payload: 5 }
   };
 
   // decrement handler to dispatch an action
   // counter decreases by 1
   const decrementHandler = () => {
-    dispatch({ type: 'decrement' });
+    dispatch(counterActions.decrement());
   };
 
   const toggleCounterHandler = () => {
-    dispatch({ type: 'toggle' })
+    dispatch(counterActions.toggleCounter())
   };
 
   return (
