@@ -1,7 +1,7 @@
 // import redux in react
 // import { legacy_createStore } from "redux";
 // This is a function in redux
-import { createSlice,configureStore } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 // 014 Working with Multiple State Properties
 const initialCounterState = {
