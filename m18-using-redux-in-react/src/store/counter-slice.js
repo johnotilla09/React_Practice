@@ -31,10 +31,10 @@ const counterSlice = createSlice({
 
 // create a store
 // This is for one store to handle reducer
-const store = configureStore({
-  //reducer: { counter: counterSlice.reducer, auth: authSlice.reducer }, // this is for many reducer in a big project
-  reducer: counterSlice.reducer // This for just single reducer that can be used in simple project
-});
+// const store = configureStore({
+//   //reducer: { counter: counterSlice.reducer, auth: authSlice.reducer }, // this is for many reducer in a big project
+//   reducer: counterSlice.reducer // This for just single reducer that can be used in simple project
+// });
 
 // Export our counter action
 export const counterActions = counterSlice.actions;
