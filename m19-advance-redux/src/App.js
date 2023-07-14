@@ -5,7 +5,8 @@ import { useDispatch } from 'react-redux';
 import Cart from './components/Cart/Cart';
 import Layout from './components/Layout/Layout';
 import Products from './components/Shop/Products';
-import { uiActions } from './store/ui-slice';
+import { sendCartData } from './store/cart-actions';
+import { fetchData } from './store/cart-actions';
 import Notification from './components/UI/Notification';
 
 let isInitial = true;
@@ -17,48 +18,19 @@ function App() {
   const notification = useSelector(state => state.ui.notification)
 
   useEffect(() => {
-    const sendCartData = async () => {
-      dispatch(uiActions.showNotification({
-        status: 'pending',
-        title: 'Sending...',
-        message: 'Sending cart details!'
-      }));
-      const response = await fetch(
-        "https://react-html-db32f-default-rtdb.asia-southeast1.firebasedatabase.app/cart.json",
-        {
-          method: "PUT",
-          body: JSON.stringify(cart),
-          headers: {
-            "ConTent-Type": "application/json"
-          }
-        }
-      );
+    dispatch(fetchData());
+  }, [dispatch]);
 
-      if (!response.ok) {
-        throw new Error('Sending cart data failed.');
-      }
+  useEffect(() => {
 
-      // const responseData = await response.json();
-
-      dispatch(uiActions.showNotification({
-        status: 'success',
-        title: 'Success!',
-        message: 'Send cart data seccessfully'
-      }));
-    }
-
+    // this condition is the reason why data in firebase did not change when we reload the page
     if (isInitial) {
       isInitial = false;
+      // dispatch(fetchData());
       return;
     }
 
-    sendCartData().catch(error => {
-      dispatch(uiActions.showNotification({
-        status: 'error',
-        title: 'Error!',
-        message: 'Sending cart deta failed'
-      }));
-    });
+    dispatch(sendCartData(cart));
   }, [cart, dispatch]);
   
   return (
