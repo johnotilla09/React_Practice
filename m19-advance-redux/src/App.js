@@ -26,11 +26,12 @@ function App() {
     // this condition is the reason why data in firebase did not change when we reload the page
     if (isInitial) {
       isInitial = false;
-      // dispatch(fetchData());
       return;
     }
 
-    dispatch(sendCartData(cart));
+    if (cart.changed) {
+      dispatch(sendCartData(cart));
+    }
   }, [cart, dispatch]);
   
   return (
