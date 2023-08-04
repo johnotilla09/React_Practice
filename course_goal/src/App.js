@@ -20,7 +20,7 @@ const App = () => {
 
   const deleteItemHandler = goalId => {
     setCourseGoals(prevGoals => {
-      const updatedGoals = prevGoals.filter(goal => goal.id !== goalId);
+      const updatedGoals = prevGoals.filter(goal => goal.id !== goalId); // filter
       return updatedGoals;
     });
   };
