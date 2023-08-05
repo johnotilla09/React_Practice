@@ -1,5 +1,5 @@
 //import here the rout component
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 //import here the rout component
 
  // components
@@ -14,6 +14,9 @@ const App = () => {
       <MainHeader />
       <main>
         <Switch>
+          <Route path='/' exact>
+            <Redirect to='/welcome' />
+          </Route>
           <Route path="/welcome">
             <Welcome />
           </Route>
