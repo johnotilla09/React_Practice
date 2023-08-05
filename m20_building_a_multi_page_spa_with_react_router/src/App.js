@@ -3,8 +3,8 @@ import { Route } from 'react-router-dom';
 //import here the rout component
 
  // components
-import Welcome from './components/Welcome';
-import Products from './components/Products';
+import Welcome from './pages/Welcome';
+import Products from './pages/Products';
 
 const App = () => {
   return (
