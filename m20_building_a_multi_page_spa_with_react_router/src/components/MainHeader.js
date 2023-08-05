@@ -1,16 +1,23 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom'; standard link in react
+import { NavLink } from 'react-router-dom';
 
-const MainHeader = () => {
+import styles from './MainHeader.module.css';
+
+const MainHeader = (props) => {
     return (
-      <header>
+      <header className={styles.header}>
         <nav>
           <ul>
             <li>
-              <Link to="/welcome">Welcome</Link>
+              <NavLink activeClassName={styles.active} to="/welcome">
+                Welcome
+              </NavLink>
             </li>
             <li>
-              <Link to="/products">Products</Link>
+              <NavLink activeClassName={styles.active} to="/products">
+                Products
+              </NavLink>
             </li>
           </ul>
         </nav>

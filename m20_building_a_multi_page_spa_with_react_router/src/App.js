@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom';
 import Welcome from './pages/Welcome';
 import Products from './pages/Products';
 import MainHeader from './components/MainHeader';
+import ProductDeatil from './pages/ProductDetail';
 
 const App = () => {
   return (
@@ -16,10 +17,15 @@ const App = () => {
           <Welcome />
         </Route>
 
+        {/* Products */}
         <Route path="/products">
           <Products />
         </Route>
+        <Route path='/product-detail/:productId'>
+          <ProductDeatil />
+        </Route>
       </main>
+
     </div>
   );
 }
