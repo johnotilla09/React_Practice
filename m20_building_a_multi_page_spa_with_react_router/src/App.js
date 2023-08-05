@@ -1,5 +1,5 @@
 //import here the rout component
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 //import here the rout component
 
  // components
@@ -11,21 +11,22 @@ import ProductDeatil from './pages/ProductDetail';
 const App = () => {
   return (
     <div>
-      <MainHeader/>
+      <MainHeader />
       <main>
-        <Route path="/welcome">
-          <Welcome />
-        </Route>
+        <Switch>
+          <Route path="/welcome">
+            <Welcome />
+          </Route>
 
-        {/* Products */}
-        <Route path="/products">
-          <Products />
-        </Route>
-        <Route path='/product-detail/:productId'>
-          <ProductDeatil />
-        </Route>
+          {/* Products */}
+          <Route path="/products" exact>
+            <Products />
+          </Route>
+          <Route path="/products/:productId">
+            <ProductDeatil />
+          </Route>
+        </Switch>
       </main>
-
     </div>
   );
 }
