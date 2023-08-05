@@ -1,7 +1,21 @@
-function App() {
+//import here the rout component
+import { Route } from 'react-router-dom';
+//import here the rout component
+
+ // components
+import Welcome from './components/Welcome';
+import Products from './components/Products';
+
+const App = () => {
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <Route path="/welcome">
+        <Welcome />
+      </Route>
+
+      <Route path="/products">
+        <Products />
+      </Route>
     </div>
   );
 }
