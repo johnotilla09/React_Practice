@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 import classes from './MainHeader.module.css';
 
@@ -10,7 +10,7 @@ const MainHeader = () => {
                     <li>
                         <NavLink activeClassName={classes.active} to="/welcome">Welcome</NavLink>
                     </li>
-                    <li>s
+                    <li>
                         <NavLink activeClassName={classes.active} to="/products">Products</NavLink>
                     </li>
                 </ul>
