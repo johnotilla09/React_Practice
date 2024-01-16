@@ -1,5 +1,12 @@
 const Welcome = () => {
-    return <h1>Welcome Page</h1>;
+    return (
+        <section>
+            <h1>The Welcome Page</h1>
+            <Route path="/welcome/new-user">
+                <p>welcome, new user</p>
+            </Route>
+        </section>
+    );
 };
 
 export default Welcome;
