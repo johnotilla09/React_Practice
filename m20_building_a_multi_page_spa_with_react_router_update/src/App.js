@@ -1,4 +1,8 @@
-import { Route, Router } from "react-router-dom/cjs/react-router-dom.min";
+import {
+    Route,
+    Router,
+    Switch,
+} from "react-router-dom/cjs/react-router-dom.min";
 
 import Welcome from "./pages/Welcome";
 import Products from "./pages/Products";
@@ -10,15 +14,17 @@ function App() {
         <div>
             <MainHeader />
             <main>
-                <Route path="/welcome">
-                    <Welcome />
-                </Route>
-                <Route path="/products">
-                    <Products />
-                </Route>
-                <Route path="/product-detail/:productId">
-                    <ProductsDetails />
-                </Route>
+                <Switch>
+                    <Route path="/welcome">
+                        <Welcome />
+                    </Route>
+                    <Route path="/products/:productId">
+                        <ProductsDetails />
+                    </Route>
+                    <Route path="/products">
+                        <Products />
+                    </Route>
+                </Switch>
             </main>
         </div>
     );
