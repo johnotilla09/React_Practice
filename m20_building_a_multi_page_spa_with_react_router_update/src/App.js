@@ -1,7 +1,7 @@
 import {
     Route,
-    Router,
     Switch,
+    Redirect
 } from "react-router-dom/cjs/react-router-dom.min";
 
 import Welcome from "./pages/Welcome";
@@ -15,14 +15,17 @@ function App() {
             <MainHeader />
             <main>
                 <Switch>
+                    <Route path='/' exact>
+                        <Redirect to='/welcome'/>
+                    </Route>
                     <Route path="/welcome">
                         <Welcome />
                     </Route>
+                    <Route path="/products" exact>
+                        <Products />
+                    </Route>
                     <Route path="/products/:productId">
                         <ProductsDetails />
-                    </Route>
-                    <Route path="/products">
-                        <Products />
                     </Route>
                 </Switch>
             </main>
