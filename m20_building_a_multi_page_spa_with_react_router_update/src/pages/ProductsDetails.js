@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams } from "react-router-dom";
 
 const ProductsDetails = () => {
     const params = useParams();
